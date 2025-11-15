@@ -1,0 +1,210 @@
+/* Contenedor principal para toda la sección del carrusel */
+.carrusel-habitaciones-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Contenedor para el encabezado o título de la sección */
+.carrusel-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Estilos para el título de la sección (anteriormente un botón) */
+.carrusel-title-button {
+  background-color: transparent;
+  border: 2px solid #2CB7A6;
+  border-radius: 25px;
+  color: #2CB7A6;
+  padding: 10px 30px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo para el ícono dentro del botón de título */
+.carrusel-title-button svg {
+  margin-right: 10px;
+}
+
+
+/* Contenedor que react-slick añade a cada slide. */
+.slick-slide>div {
+  padding: 10px;
+}
+
+/* Estilos para cada tarjeta individual de habitación */
+.habitacion-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s;
+}
+
+/* Efecto al pasar el mouse sobre una tarjeta */
+.habitacion-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Estilo para la imagen de la habitación */
+.habitacion-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+/* Contenedor para la información debajo de la imagen */
+.habitacion-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Contenedor para la calificación (estrellas y número) */
+.habitacion-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Estilo para los íconos de estrella */
+.habitacion-rating svg {
+  margin-right: 5px;
+}
+
+/* Estilo para el número de la calificación */
+.habitacion-rating span {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* Estilo para el título de la habitación (H3) */
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #2CB7A6;
+  text-transform: uppercase;
+}
+
+/* Estilo para el botón "Reservar" */
+.reservar-button {
+  background-color: #2CB7A6;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  padding: 8px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+  align-self: flex-start;
+}
+
+/* Efecto al pasar el mouse sobre el botón "Reservar" */
+.reservar-button:hover {
+  background-color: #218377;
+}
+
+/* Estilos para las flechas de navegación del carrusel */
+.slick-prev,
+.slick-next {
+  font-size: 2rem;
+  color: #fff !important;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  background: #2CB7A6 !important;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Posición de la flecha "Anterior" */
+.slick-prev {
+  left: 25px;
+}
+
+/* Posición de la flecha "Siguiente" */
+.slick-next {
+  right: 25px;
+}
+
+
+/* Contenedor para el botón "Ver más habitaciones" */
+.ver-mas-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Estilo para el botón "Ver más habitaciones" */
+.ver-mas-button {
+  background-color: #2CB7A6;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  padding: 12px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre el botón "Ver más habitaciones" */
+.ver-mas-button:hover {
+  background-color: #218377;
+}
+
+/* Media Queries */
+
+@media (max-width: 1024px) {
+  .carrusel-habitaciones-container {
+    width: 100%;
+    padding: 60px 40px;
+  }
+
+  .slick-prev {
+    left: -5px;
+  }
+
+  .slick-next {
+    right: -5px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+
+  .habitacion-card:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .ver-mas-container {
+    margin-top: 10px;
+  }
+}
